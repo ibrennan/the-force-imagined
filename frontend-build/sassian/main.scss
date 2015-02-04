@@ -1,0 +1,79 @@
+/******************************************************************
+
+About:
+
+	Construct our main.css file here.
+
+	This file should just be a collection of imports, and contain no
+	direct CSS.
+
+******************************************************************/
+
+// compass
+@import "compass";
+
+// variables
+@import "variables";
+
+// reset
+@import "utilities/reset";
+
+// sprites
+@import "utilities/sprites";
+
+// screen break points
+@import "utilities/breakpoints";
+
+// grid
+@import "utilities/grid";
+
+// rem
+@import "utilities/rem";
+
+// rem
+@import "utilities/fontawesome.scss";
+ 
+
+/******************************************************************
+
+##     ##  #######  ########  ##     ## ##       ########  ######  
+###   ### ##     ## ##     ## ##     ## ##       ##       ##    ## 
+#### #### ##     ## ##     ## ##     ## ##       ##       ##       
+## ### ## ##     ## ##     ## ##     ## ##       ######    ######  
+##     ## ##     ## ##     ## ##     ## ##       ##             ## 
+##     ## ##     ## ##     ## ##     ## ##       ##       ##    ## 
+##     ##  #######  ########   #######  ######## ########  ######  
+
+******************************************************************/
+
+@import "modules/fonts";
+
+@import "modules/gui";
+
+@import "modules/header";
+
+@import "modules/footer";
+
+@import "modules/stars";
+
+@import "modules/animationKeyframes";
+
+/******************************************************************
+
+##     ## #### ######## ##      ##  ######  
+##     ##  ##  ##       ##  ##  ## ##    ## 
+##     ##  ##  ##       ##  ##  ## ##       
+##     ##  ##  ######   ##  ##  ##  ######  
+ ##   ##   ##  ##       ##  ##  ##       ## 
+  ## ##    ##  ##       ##  ##  ## ##    ## 
+   ###    #### ########  ###  ###   ######  
+
+******************************************************************/
+
+.view {
+	@import "views/home";
+
+	@import "views/story";
+
+	@import "views/stories";
+}

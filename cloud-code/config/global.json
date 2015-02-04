@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "The Force Imagained": {
+            "applicationId": "htUmjtcoQ4ZX1nVrEsYIsQ6jpi8p6fjtPHuduRYu", 
+            "masterKey": "0XGlHQKDgxYUDW8QZ72UkYlpogv6kYbmK5QYFh3e"
+        }, 
+        "_default": {
+            "link": "The Force Imagained"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.3.2"
+    }
+}

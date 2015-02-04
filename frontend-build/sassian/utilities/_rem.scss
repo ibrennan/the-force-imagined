@@ -1,0 +1,94 @@
+/*********************************************************************
+
+** Sassian - Utilities - rem sizing **
+
+About:
+	
+	Allows you to use rem sizing within your project (provides a
+	fallback for IE)
+
+	Readmore about rems here:
+	http://snook.ca/archives/html_and_css/font-size-with-rem
+
+Usage:
+
+	@include rem(property, value(s));
+
+	* Note *
+	Make sure your html font-size is set to 62.5%:
+
+	html {
+		font-size: 62.5%;
+	}
+
+	That way 1rem = 10px, 2rem = 20px, etc.
+
+Example:
+	
+	h1 {
+		@include rem(font-size, 1.6);
+		@include rem(padding, 1.6, 1.0, 0, 0);
+	}
+
+Outputs:
+
+	h1 {
+		font-size: 16px;
+		font-size: 1.6rem;
+		padding: 16px 10px 0 0;
+		padding: 1.6rem 1.0rem 0 0;
+	}
+
+
+*********************************************************************/
+
+@function strip-unit($num) {
+	@return $num / ($num * 0 + 1);
+}
+
+@mixin rem($property, $values...) {
+
+	// How many values are there? 
+	$valuesLength: length($values);
+
+	// Our px value string
+	$px: '';
+
+	// Our rem value string
+	$rem: '';
+
+	// For each value
+	@for $i from 1 through $valuesLength {
+
+		// Strip the unit from the value, this is a fallback
+		// incase the mixin is called with units on the floats
+		$value: strip-unit(nth($values, $i));
+
+		// Create the px value, and append it to the
+		// px string.
+		// (We multiply by 10 as the base font is 62.5%
+		// meaning that 1rem = 10px, 2em = 20px, etc.)
+		$px: #{$px + $value*10}px;
+
+		// Add a space after the value if this isn't the
+		// last value.
+		@if $i < $valuesLength {
+			$px: #{$px + " "};
+		}
+
+		// Create the rem value, and append it to the
+		// rem string.
+		$rem: #{$rem + $value}rem;
+
+
+		// Add a space after the value if this isn't the
+		// last value.
+		@if $i < $valuesLength {
+			$rem: #{$rem + " "};
+		}
+	}
+
+	// Output our property and values
+	#{$property}: $px; // px fallback for <= IE8
+	#{$property}: $rem; 
+}

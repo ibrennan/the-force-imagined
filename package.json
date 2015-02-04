@@ -1,0 +1,21 @@
+{
+	"name": "tech-cards",
+	"author": {
+		"name": "AnalogFolk",
+		"email": "ian.brennan@analogfolk.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@bitbucket.org:analogfolk-ondemand/tech-cards.git"
+	},
+	"devDependencies": {
+		"grunt": "~0.4.2",
+		"grunt-contrib-watch": "~0.5.3",
+		"grunt-contrib-compass": "~0.7.0",
+		"grunt-contrib-copy": "~0.5.0",
+		"grunt-notify": "~0.2.20",
+		"grunt-contrib-clean": "~0.6.0",
+		"grunt-contrib-manifest": "~0.2.0",
+		"grunt-shell": "~1.1.1"
+	}
+}
